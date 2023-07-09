@@ -1,0 +1,206 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Verdana";
+}
+body{
+    background:linear-gradient(to right, #2587c0,#193130);
+    color: #fff;
+}
+#home{
+   max-width: 1500px;
+   padding: 0 40px;
+   margin: auto;
+}
+nav{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 30px 0;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 40px;
+    cursor: pointer;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+}
+nav input{
+    margin-left: 60px;
+    border: 2px solid #fff;
+    background: transparent;
+    padding: 8px;
+    border-radius: 20px;
+}
+.fila{
+    display: flex;
+}
+.fila .col{
+    width: 50%;
+    position: relative;
+}
+h2{
+    font-size: 60px;
+    line-height: 80px;
+}
+.normal{
+    font-weight: normal;
+}
+.col p{
+    max-width: 350px;
+    margin: 30px 0;
+}
+.col button{
+    background: transparent;
+    border: 2px solid #fff;
+    width: 250px;
+    padding: 10px;
+    border-radius: 30px;
+    color: #fff;
+    margin: 30px 0;
+    cursor: pointer;
+    transition: .5s;
+
+}
+.col button:hover{
+    background-color: #0000004b;
+}
+.col .figura1{
+    position: absolute;
+    z-index: -1;
+    top: 50px;
+    right: 80px;
+    animation: 10s girar infinite alternate linear;
+}
+@keyframes girar {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+.col .figura3{
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    z-index: -2;
+}
+.col .libro{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.col .figura2{
+    position: absolute;
+    top: 70px;
+    right: 0;
+    animation: 5s transparencia infinite alternate linear;
+    z-index: -2;
+}
+@keyframes transparencia {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: .1;
+    }
+}
+.col .nave{
+    position: absolute;
+    z-index: 0;
+    animation: 3s mover infinite alternate linear;
+}
+
+@keyframes mover {
+    0%{
+        transform: translate(40px,40px);
+    }
+    100%{
+        transform: translate(0px,0px);
+    }
+}
+footer{
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+footer .i1{
+    background-color: #ff8091;
+}
+footer .i2{
+    background-color: #db9e54
+}
+footer .i3{
+    background-color: #fff;
+    color: #666666;
+}
+
+.item{
+    padding: 40px;
+    text-align: right;
+    font-size: 12px;
+    width: 34%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s;
+}
+.item:hover{
+    transform: scale(1.1);
+}
+.item i{
+    display: block;
+    font-size: 30px;
+}
+.item .info{
+    max-width: 280px;
+}
+
+
+#item1, #item2, #item3{
+    background-color: rgba(0, 0, 0, .9);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 1.5s;
+    z-index: 5;
+}
+#item1 i, #item2 i, #item3 i{
+    display: block;
+    font-size: 90px;
+    color: #fd3644;
+}
+#item1 .info, #item2 .info, #item3 .info{
+    max-width: 800px;
+}
+#item1 p, #item2 p, #item3 p{
+    margin: 30px 0;
+    line-height: 30px;
+}
+#item1 .close, #item2 .close, #item3 .close{
+    background-color: #000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 11;
+}

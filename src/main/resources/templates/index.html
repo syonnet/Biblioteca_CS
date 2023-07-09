@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+          integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="css/estiloI.css">
+</head>
+<body>
+    <section id="home">
+        <nav>
+            <ul>
+                <li><a href="home">HOME</a></li>
+                <li><a href="contacto">CONTACTO</a></li>
+                <li><a href="/logout">SALIR</a></li>
+            </ul>
+            <input type="text">
+        </nav>
+        <div class="fila">
+            <div class="col">
+                <h2>Biblioteca <span class="normal">&</span></h2>
+                <h2 class="normal">cafe</h2>
+                <h2>Saber y el Sabor</h2>
+                <p>"En la Biblioteca del Saber y el Sabor, cada libro es una receta y cada página es un sabor. Aprende
+                    mientras disfrutas de exquisitas delicias, y explora la fusión perfecta entre el conocimiento!"</p>
+                <div class="figura1">
+                    <img src="img/figura1.png" alt="">
+                </div>
+                <div class="figura3">
+                    <img src="img/figura3.png" alt="">
+                </div>
+            </div>
+            <div class="col">
+                <div class="figura2">
+                    <img src="img/figura2.png" alt="">
+                </div>
+                <div class="nave">
+                    <img src="img/nave.png" alt="">
+                </div>
+                <div class="libro">
+                    <img src="img/libro.png" alt="">
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="item i1" onclick="mostrar1()">
+                <i class="fa-solid fa-address-book"></i>
+                <div class="info">
+                    <h3>Accesibilidad</h3>
+                    <p>Conoce los servicios exclusivos que te podemos ofrecer</p>
+                </div>
+            </div>
+            <div class="item i2" onclick="mostrar2()">
+                <i class="fa-solid fa-note-sticky"></i>
+                <div class="info">
+                    <h3>Prestamo de libros</h3>
+                    <p>Puedes llevarte los libros a tu casa cuando tu prefieras</p>
+                </div>
+            </div>
+            <div class="item i3" onclick="mostrar3()">
+                <i class="fa-brands fa-font-awesome"></i>
+                <div class="info">
+                    <h3>Somos los primeros</h3>
+                    <p>Siempre enfocados al gusto del cliente estamos desde el 2010</p>
+                </div>
+            </div>
+        </footer>
+
+        <div id="item1">
+            <i class="fa-solid fa-address-book"></i>
+            <div class="info">
+                <h3>Conocimiento</h3>
+                <p>"Nuestra biblioteca/café ofrece una experiencia única para los amantes del conocimiento y del buen café.
+                    Disfruta de un ambiente tranquilo y acogedor mientras te sumerges en una buena lectura o te conectas con
+                    el mundo en línea gracias a nuestra conexión Wi-Fi gratuita. Además, nuestro café cuenta con una
+                    deliciosa selección de bebidas y snacks para satisfacer tu paladar mientras te sumerges en los mundos de
+                    los libros. Y si necesitas algún libro en particular, no dudes en preguntar a nuestro amable personal,
+                    ¡estamos para ayudarte! Ven y descubre por qué somos mucho más que una simple biblioteca o café, ¡somos
+                    un refugio para tu mente y tu paladar!"</p>
+            </div>
+            <div class="close" onclick="cerrar()">
+                &#x2715
+            </div>
+        </div>
+        <div id="item2">
+            <i class="fa-solid fa-note-sticky"></i>
+            <div class="info">
+                <h3>Prestamo de libros</h3>
+                <p>"En nuestra biblioteca, no solo te ofrecemos la oportunidad de leer en nuestro espacio acogedor, también
+                    te permitimos llevarte nuestros libros a casa. Nuestro sistema de préstamo es fácil y sencillo: solo
+                    necesitas tener una membresía gratuita con nosotros y podrás llevar hasta tres libros contigo por un
+                    período de dos semanas. Además, si necesitas extender el tiempo de préstamo o renovar tu membresía,
+                    nuestro personal estará encantado de ayudarte. No hay nada mejor que tener un buen libro en tus manos, y
+                    en nuestra biblioteca estamos aquí para hacerte esa experiencia aún más fácil y accesible. ¡Ven y
+                    descubre la maravillosa selección de libros que tenemos para ti!"</p>
+            </div>
+            <div class="close" onclick="cerrar()">
+                &#x2715
+            </div>
+        </div>
+        <div id="item3">
+            <i class="fa-brands fa-font-awesome"></i>
+            <div class="info">
+                <h3>Somos Pioneros</h3>
+                <p>"En nuestra biblioteca, siempre estamos en busca de las mejores formas de promover el aprendizaje y el
+                    crecimiento personal. Es por eso que somos pioneros en la implementación de un método de lectura
+                    dinámica, que ha demostrado ser altamente efectivo para mejorar la velocidad y comprensión de lectura en
+                    nuestros usuarios. Nuestro personal altamente capacitado estará encantado de enseñarte este método y
+                    proporcionarte recursos adicionales para mejorar tu capacidad de lectura. No importa si eres un
+                    estudiante, profesional o simplemente un entusiasta de los libros, en nuestra biblioteca estamos
+                    comprometidos en brindarte las mejores herramientas para que puedas aprovechar al máximo tu tiempo y tu
+                    aprendizaje. ¡Ven y descubre cómo nuestra biblioteca puede ayudarte a mejorar tu capacidad de
+                    lectura!"</p>
+            </div>
+            <div class="close" onclick="cerrar()">
+                &#x2715
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function mostrar1() {
+            document.getElementById('item1').style.left = '0';
+        }
+
+        function mostrar2() {
+            document.getElementById('item2').style.left = '0';
+        }
+
+        function mostrar3() {
+            document.getElementById('item3').style.left = '0';
+        }
+
+        function cerrar() {
+            document.getElementById('item1').style.left = '-100%';
+            document.getElementById('item2').style.left = '-100%';
+            document.getElementById('item3').style.left = '-100%';
+        }
+    </script>
+</body>
+</html>

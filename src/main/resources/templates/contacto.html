@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contactos</title>
+
+    <link rel="stylesheet" href="css/estilosC.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Inicio</a>
+        </nav>
+        <section class="textos-header">
+            <h1>Biblioteca</h1>
+            <h2>
+                Para cualquier consulta, no dudes en ponerte en contacto con nosotros. Puedes visitarnos en nuestra sede
+                ubicada en la calle x, enviarnos un correo electrónico o llamarnos directamente. Estamos disponibles
+                de lunes a viernes de 9am a 6pm para atender tus preguntas y ayudarte en todo lo que necesites.
+            </h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                 style="height: 100%; width: 100%;">
+                <path d="M0.00,9.8 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #e0cccc;"></path>
+            </svg>
+        </div>
+    </header>
+
+    <section id="contacto">
+        <h3 class="titulo-seccion">Comunicate con Nosotros</h3>
+        <div class="contenedor-form">
+            <form action="">
+                <div class="fila mitad">
+                    <input type="text" placeholder="Nombre Completo *" class="input-mitad"/>
+                    <input type="email" placeholder="Dirección de Email" class="input-mitad"/>
+                </div>
+                <div class="fila">
+                    <input type="text" placeholder="Tema..." class="input-full"/>
+                </div>
+                <div class="fila">
+                            <textarea name="" id="" cols="30" rows="10" placeholder="Tu Mensaje..."
+                                      class="input-full"></textarea>
+                </div>
+
+                <input type="submit" value="Enviar Mensaje" class="btn-enviar"/>
+                <br>
+            </form>
+        </div>
+    </section>
+
+    </main>
+    <footer class="footer">
+        <section class="footer__container container">
+            <nav class="nav nav--footer">
+                <h2 class="footer__title">Biblioteca El saber y el sabor.</h2>
+            </nav>
+
+            <form class="footer__form" action="https://formspree.io/f/mknkkrkj" method="POST">
+                <h2 class="footer__newsletter">Suscribete a la newsletter</h2>
+                <div class="footer__inputs">
+                    <input type="email" placeholder="Email:" class="footer__input" name="_replyto">
+                    <input type="submit" value="Registrate" class="footer__submit">
+                </div>
+            </form>
+        </section>
+
+        <section class="footer__copy container">
+            <h3 class="footer__copyright">Derechos reservados 2023 &copy; SISGO DESING</h3>
+        </section>
+    </footer>
+</body>
+</html>
