@@ -1,6 +1,5 @@
 package com.sisgo.biblioteca.controller;
 
-import com.sisgo.biblioteca.interfaces.LibroRepository;
 import com.sisgo.biblioteca.objetos.Libro;
 import com.sisgo.biblioteca.servicios.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;

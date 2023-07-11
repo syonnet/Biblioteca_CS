@@ -1,6 +1,5 @@
 package com.sisgo.biblioteca.controller;
 
-import com.sisgo.biblioteca.interfaces.PrestamoRepository;
 import com.sisgo.biblioteca.objetos.Prestamo;
 import com.sisgo.biblioteca.servicios.PrestamoService;
 import org.springframework.beans.factory.annotation.Autowired;
