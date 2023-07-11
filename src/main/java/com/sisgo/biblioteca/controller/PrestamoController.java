@@ -2,6 +2,7 @@ package com.sisgo.biblioteca.controller;
 
 import com.sisgo.biblioteca.interfaces.PrestamoRepository;
 import com.sisgo.biblioteca.objetos.Prestamo;
+import com.sisgo.biblioteca.servicios.PrestamoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ import java.util.Optional;
 public class PrestamoController {
 
     @Autowired
-    PrestamoRepository prestamoRepository;
+    PrestamoService prestamoService;
 
     // CRUD - GET
     @GetMapping("/formPrestamo")
@@ -27,7 +28,7 @@ public class PrestamoController {
 
     @GetMapping("/listPrestamo")
     public String listaPrestamo(Model model) {
-        List<Prestamo> prestamos = prestamoRepository.findAll();
+        List<Prestamo> prestamos = prestamoService.obtenerPrestamos();
         model.addAttribute("prestamos", prestamos);
         return "listPrestamo";
     }
@@ -35,22 +36,22 @@ public class PrestamoController {
     // CRUD - POST
     @PostMapping("/formPrestamo")
     public String crearPrestamo(Prestamo prestamo) {
-        prestamoRepository.save(prestamo);
+        prestamoService.guardarPrestamo(prestamo);
         return "redirect:/listPrestamo";
     }
 
     // CRUD - UPDATE
     @GetMapping("/editPrestamo/{id}")
     public String editarPrestamo(@PathVariable int id, Model model) {
-        Optional<Prestamo> prestamo = prestamoRepository.findById(id);
-        model.addAttribute("prestamo", prestamo);
+        Optional<Prestamo> prestamo = prestamoService.actualizarPrestamoPorId(id);
+        model.addAttribute("prestamo", prestamo.orElse(new Prestamo()));
         return "formPrestamo";
     }
 
     // CRUD - DELETE
     @GetMapping("/deletePrestamo/{id}")
     public String eliminarPrestamo(@PathVariable int id) {
-        prestamoRepository.deleteById(id);
+        prestamoService.eliminarPrestamoPorId(id);
         return "redirect:/listPrestamo";
     }
 

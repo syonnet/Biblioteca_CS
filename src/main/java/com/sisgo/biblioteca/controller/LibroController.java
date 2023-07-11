@@ -2,6 +2,7 @@ package com.sisgo.biblioteca.controller;
 
 import com.sisgo.biblioteca.interfaces.LibroRepository;
 import com.sisgo.biblioteca.objetos.Libro;
+import com.sisgo.biblioteca.servicios.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +17,9 @@ import java.util.Optional;
 public class LibroController {
 
     @Autowired
-    LibroRepository libroRepository;
+    LibroService libroService;
 
-    // CRUD - GE
+    // CRUD - GET
     @GetMapping("/formLibro")
     public String formularioLibro(Model model) {
         model.addAttribute("libro", new Libro());
@@ -27,7 +28,7 @@ public class LibroController {
 
     @GetMapping("/listLibro")
     public String listaLibro(Model model) {
-        List<Libro> libros = libroRepository.findAll();
+        List<Libro> libros = libroService.obtenerLibros();
         model.addAttribute("libros", libros);
         return "listLibro";
     }
@@ -35,22 +36,22 @@ public class LibroController {
     // CRUD - POST
     @PostMapping("/formLibro")
     public String crearLibro(Libro libro) {
-        libroRepository.save(libro);
+        libroService.guardarLibro(libro);
         return "redirect:/listLibro";
     }
 
     // CRUD - UPDATE
     @GetMapping("/editLibro/{id}")
     public String editarLibro(@PathVariable int id, Model model) {
-        Optional<Libro> libro = libroRepository.findById(id);
-        model.addAttribute("libro", libro);
+        Optional<Libro> libro = libroService.actualizarLibroPorId(id);
+        model.addAttribute("libro", libro.orElse(new Libro()));
         return "formLibro";
     }
 
     // CRUD - DELETE
     @GetMapping("/deleteLibro/{id}")
     public String eliminarLibro(@PathVariable int id) {
-        libroRepository.deleteById(id);
+        libroService.eliminarLibroPorId(id);
         return "redirect:/listLibro";
     }
 

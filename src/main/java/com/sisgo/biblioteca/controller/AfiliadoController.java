@@ -2,6 +2,7 @@ package com.sisgo.biblioteca.controller;
 
 import com.sisgo.biblioteca.interfaces.AfiliadoRepository;
 import com.sisgo.biblioteca.objetos.Afiliado;
+import com.sisgo.biblioteca.servicios.AfiliadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ import java.util.Optional;
 public class AfiliadoController {
 
     @Autowired
-    AfiliadoRepository afiliadoRepository;
+    AfiliadoService afiliadoService;
 
     // CRUD - GET
     @GetMapping("/formAfiliado")
@@ -27,7 +28,7 @@ public class AfiliadoController {
 
     @GetMapping("/listAfiliado")
     public String listaAfiliado(Model model) {
-        List<Afiliado> afiliados = afiliadoRepository.findAll();
+        List<Afiliado> afiliados = afiliadoService.obtenerAfiliados();
         model.addAttribute("afiliados", afiliados);
         return "listAfiliado";
     }
@@ -35,22 +36,22 @@ public class AfiliadoController {
     // CRUD - POST
     @PostMapping("/formAfiliado")
     public String crearAfiliado(Afiliado afiliado) {
-        afiliadoRepository.save(afiliado);
+        afiliadoService.guardarAfiliado(afiliado);
         return "redirect:/listAfiliado";
     }
 
     // CRUD - UPDATE
     @GetMapping("/editAfiliado/{cedula}")
     public String editarAfiliado(@PathVariable String cedula, Model model) {
-        Optional<Afiliado> afiliado = afiliadoRepository.findById(cedula);
-        model.addAttribute("afiliado", afiliado);
+        Optional<Afiliado> afiliado = afiliadoService.actualizarAfiliadoPorId(cedula);
+        model.addAttribute("afiliado", afiliado.orElse(new Afiliado()));
         return "formAfiliado";
     }
 
     // CRUD - DELETE
     @GetMapping("/deleteAfiliado/{cedula}")
     public String eliminarAfiliado(@PathVariable String cedula) {
-        afiliadoRepository.deleteById(cedula);
+        afiliadoService.eliminarAfiliadoPorId(cedula);
         return "redirect:/listAfiliado";
     }
 
