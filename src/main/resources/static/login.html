@@ -1,21 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Iniciar sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/login.css">
 </head>
+
+
 <body>
-<h1>Iniciar sesión LOGO</h1>
-<form action="/login" method="post">
-    <div>
-        <label for="username">Nombre de usuario:</label>
-        <input type="text" id="username" name="username" required>
+<header class="header">
+    <nav class="navbar">
+        <a href="home">HOME</a>
+        <a href="contacto">CONTACTO</a>
+        <a href="#">LOGIN</a>
+        <input type="text">
+    </nav>
+</header>
+
+<div class="background">
+    <img src="img/biblioteca.jpg" height="700" width="1550" alt="Biblioteca">
+</div>
+
+
+<div class="container">
+    <div class="content">
+        <div class="text-sci">
+
+
+            <h2>
+                Bienvenidos/as!<br>
+                <span>A nuestro sitio web.</span>
+            </h2>
+
+            <p>
+                En la Biblioteca del Saber y el Sabor, cada libro es una receta y cada página es un sabor. Aprende
+                mientras disfrutas de exquisitas delicias, y explora la fusión perfecta entre el conocimiento!
+            </p>
+        </div>
     </div>
-    <div>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
+
+    <div class="logreg-box">
+        <div class="form-box login">
+            <form action="#">
+                <h2>Iniciar Sesión</h2>
+
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-user'></i></span>
+                    <input type="text" name="user" required>
+                    <label for="user">Usuario</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                    <input type="password" name="pass" required>
+                    <label for="pass">Contraseña</label>
+                </div>
+
+                <button type="submit" class="btn">Entrar</button>
+
+                <div class="login-register">
+                    <p>No tiene una cuenta?
+                        <a href="#" class="register-link">Registrarse</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <form action="#">
+                <h2>Registrarse</h2>
+
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-user'></i></span>
+                    <input type="text" name="user" required>
+                    <label for="user">Usuario</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                    <input type="password" name="pass" required>
+                    <label for="pass">Contraseña</label>
+                </div>
+
+                <button type="submit" class="btn">Registrarse</button>
+
+                <div class="login-register">
+                    <p>Ya tiene una cuenta?
+                        <a href="#" class="login-link">Entrar</a>
+                    </p>
+                </div>
+            </form>
+        </div>
     </div>
-    <button type="submit">Iniciar sesión</button>
-</form>
+</div>
+
 </body>
+
+<script>
+    const logregBox = document.querySelector('.logreg-box');
+    const loginLink = document.querySelector('.login-link');
+    const registerLink = document.querySelector('.register-link');
+
+    registerLink.addEventListener('click', () => {
+        logregBox.classList.add('active');
+    });
+
+    loginLink.addEventListener('click', () => {
+        logregBox.classList.remove('active');
+    });
+
+</script>
+
 </html>
